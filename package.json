@@ -1,0 +1,11 @@
+{
+  "name": "tappi-for-chrome-open-shell",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A sanitized open shell for the Tappi for Chrome multi-harness sidebar.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  }
+}

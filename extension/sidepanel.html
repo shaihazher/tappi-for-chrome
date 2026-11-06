@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tappi — Open Shell</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 8h16v5H8zM8 15h11v5H8zM8 22h16v5H8z" fill="currentColor" />
+          <circle cx="25" cy="17.5" r="2.4" fill="#f7643a" />
+        </svg>
+        <span>Tappi</span>
+        <span class="badge">OPEN SHELL</span>
+      </div>
+      <button class="icon" type="button" title="New conversation" aria-label="New conversation" id="new-chat">+</button>
+    </header>
+
+    <section class="context" aria-label="Harness context">
+      <label class="field">
+        <span>Harness</span>
+        <select id="harness" aria-label="Harness">
+          <option value="demo">Demo adapter</option>
+        </select>
+      </label>
+      <label class="field">
+        <span>Model</span>
+        <select id="model" aria-label="Model">
+          <option value="demo-1">Demo model · local</option>
+        </select>
+      </label>
+    </section>
+
+    <div class="workspace">
+      <span class="dot" aria-hidden="true"></span>
+      <span>No workspace connected</span>
+    </div>
+
+    <main class="messages" id="messages" aria-live="polite">
+      <div class="empty">
+        <svg class="empty-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M8 8h16v5H8zM8 15h11v5H8zM8 22h16v5H8z" fill="currentColor" />
+          <circle cx="25" cy="17.5" r="2.4" fill="#f7643a" />
+        </svg>
+        <p class="eyebrow">A fresh perspective</p>
+        <h1>What shall we work on?</h1>
+        <p class="muted">
+          This is the sanitized open shell. It runs a demo adapter with no model, no native host, and no network calls.
+        </p>
+        <div class="suggestions">
+          <button type="button" data-prompt="Explain what this shell does and what is not included.">What is in this shell?</button>
+          <button type="button" data-prompt="Show me the adapter contract.">Show the adapter contract</button>
+        </div>
+      </div>
+    </main>
+
+    <form class="composer" id="composer">
+      <label class="sr-only" for="input">Message</label>
+      <textarea id="input" rows="2" placeholder="Ask the demo adapter…" autocomplete="off"></textarea>
+      <div class="composer-row">
+        <span class="hint">Demo only · no model calls</span>
+        <button class="send" type="submit" aria-label="Send message" id="send">Send</button>
+      </div>
+    </form>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
